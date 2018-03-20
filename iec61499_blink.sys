@@ -25,11 +25,11 @@
     <Attribute Comment="color" Name="Color" Type="STRING" Value="150,200,112"/>
     <Resource Comment="" Name="EMB_RES" Type="EMB_RES" x="0.0" y="0.0">
       <FBNetwork>
-        <FB Comment="" Name="E_SR" Type="E_SR" x="2900.0" y="400.0"/>
+        <FB Comment="" Name="E_SR" Type="E_SR" x="3000.0" y="0.0"/>
         <FB Comment="" Name="E_CYCLE" Type="E_CYCLE" x="1400.0" y="400.0">
           <Parameter Name="DT" Value="T#1s"/>
         </FB>
-        <FB Comment="" Name="E_SWITCH" Type="E_SWITCH" x="2200.0" y="400.0"/>
+        <FB Comment="" Name="E_SWITCH" Type="E_SWITCH" x="2200.0" y="100.0"/>
         <DataConnections>
           <Connection Comment="" Destination="E_SWITCH.G" Source="E_SR.Q" dx1="0.0" dx2="0.0" dy="0.0"/>
         </DataConnections>
