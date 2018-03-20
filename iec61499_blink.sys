@@ -24,9 +24,26 @@
     <Attribute Comment="device profile" Name="Profile" Type="STRING" Value="HOLOBLOC"/>
     <Attribute Comment="color" Name="Color" Type="STRING" Value="150,200,112"/>
     <Resource Comment="" Name="EMB_RES" Type="EMB_RES" x="0.0" y="0.0">
-      <FBNetwork/>
+      <FBNetwork>
+        <FB Comment="" Name="E_SR" Type="E_SR" x="2000.0" y="700.0"/>
+        <FB Comment="" Name="E_CYCLE" Type="E_CYCLE" x="500.0" y="700.0">
+          <Parameter Name="DT" Value="T#1s"/>
+        </FB>
+        <FB Comment="" Name="E_SWITCH" Type="E_SWITCH" x="1300.0" y="700.0"/>
+        <DataConnections>
+          <Connection Comment="" Destination="E_SWITCH.G" Source="E_SR.Q" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </DataConnections>
+        <EventConnections>
+          <Connection Comment="" Destination="E_SWITCH.EI" Source="E_CYCLE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Comment="" Destination="E_SR.S" Source="E_SWITCH.EO0" dx1="0.0" dx2="0.0" dy="0.0"/>
+          <Connection Comment="" Destination="E_SR.R" Source="E_SWITCH.EO1" dx1="0.0" dx2="0.0" dy="0.0"/>
+        </EventConnections>
+      </FBNetwork>
     </Resource>
   </Device>
+  <Mapping From="iec61499_blink_application.E_SR" To="FORTE_PC.EMB_RES.E_SR"/>
+  <Mapping From="iec61499_blink_application.E_CYCLE" To="FORTE_PC.EMB_RES.E_CYCLE"/>
+  <Mapping From="iec61499_blink_application.E_SWITCH" To="FORTE_PC.EMB_RES.E_SWITCH"/>
   <Segment Comment="" Name="Ethernet" Type="Ethernet" dx1="1500.0" x="1800.0" y="300.0">
     <Attribute Comment="color" Name="Color" Type="STRING" Value="225,130,199"/>
   </Segment>
