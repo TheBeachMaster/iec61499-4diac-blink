@@ -2,4 +2,16 @@
 <!DOCTYPE System SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
 <System Comment="" Name="iec61499_blink">
   <VersionInfo Author="Author" Organization="4DIAC-Consortium" Version="1.0"/>
+  <Device Comment="" Name="FORTE_PC" Type="FORTE_PC" x="475.0" y="585.0">
+    <Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;"/>
+    <Attribute Comment="device profile" Name="Profile" Type="STRING" Value="HOLOBLOC"/>
+    <Attribute Comment="color" Name="Color" Type="STRING" Value="150,200,112"/>
+    <Resource Comment="" Name="EMB_RES" Type="EMB_RES" x="0.0" y="0.0">
+      <FBNetwork/>
+    </Resource>
+  </Device>
+  <Segment Comment="" Name="Ethernet" Type="Ethernet" dx1="1500.0" x="1800.0" y="300.0">
+    <Attribute Comment="color" Name="Color" Type="STRING" Value="225,130,199"/>
+  </Segment>
+  <Link CommResource="FORTE_PC" Comment="" SegmentName="Ethernet"/>
 </System>
