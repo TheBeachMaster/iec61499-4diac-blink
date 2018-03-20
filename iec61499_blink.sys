@@ -2,6 +2,23 @@
 <!DOCTYPE System SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
 <System Comment="" Name="iec61499_blink">
   <VersionInfo Author="Author" Organization="4DIAC-Consortium" Version="1.0"/>
+  <Application Comment="" Name="iec61499_blink_application">
+    <SubAppNetwork>
+      <FB Comment="" Name="E_SR" Type="E_SR" x="2000.0" y="700.0"/>
+      <FB Comment="" Name="E_SWITCH" Type="E_SWITCH" x="1300.0" y="700.0"/>
+      <FB Comment="" Name="E_CYCLE" Type="E_CYCLE" x="500.0" y="700.0">
+        <Parameter Name="DT" Value="T#1s"/>
+      </FB>
+      <DataConnections>
+        <Connection Comment="" Destination="E_SWITCH.G" Source="E_SR.Q" dx1="0.0" dx2="0.0" dy="220.0"/>
+      </DataConnections>
+      <EventConnections>
+        <Connection Comment="" Destination="E_SWITCH.EI" Source="E_CYCLE.EO" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Comment="" Destination="E_SR.S" Source="E_SWITCH.EO0" dx1="0.0" dx2="0.0" dy="0.0"/>
+        <Connection Comment="" Destination="E_SR.R" Source="E_SWITCH.EO1" dx1="0.0" dx2="0.0" dy="0.0"/>
+      </EventConnections>
+    </SubAppNetwork>
+  </Application>
   <Device Comment="" Name="FORTE_PC" Type="FORTE_PC" x="475.0" y="585.0">
     <Parameter Name="MGR_ID" Value="&quot;localhost:61499&quot;"/>
     <Attribute Comment="device profile" Name="Profile" Type="STRING" Value="HOLOBLOC"/>
